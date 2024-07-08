@@ -28,6 +28,15 @@ router.get("/",(req,res)=>{
   res.send(users);
 });
 
+// Define a route handler for GET requests to the root path "/"
+router.get("/:formatting",(req,res)=>{
+  // Send a JSON response containing the users array, formatted with an indentation of 4 spaces for readability
+  res.send(JSON.stringify({users}, null, 4));
+
+  //for checking user by email from cmd write
+  // curl localhost:5000/user/formatting
+});
+
 // GET by specific ID request: Retrieve a single user with email ID
 router.get("/:email",(req,res)=>{
    // Extract the email parameter from the request URL
