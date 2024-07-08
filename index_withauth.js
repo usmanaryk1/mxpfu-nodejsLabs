@@ -53,6 +53,15 @@ app.post("/login", (req, res) => {
         accessToken
     }
     return res.status(200).send("User successfully logged in");
+
+    //past the body in postman for login
+    //http://localhost:5000/login
+    // {
+    //     "user":{
+    //         "name":"abc",
+    //         "id":1
+    //     }
+    // } 
 });
 
 // Start server
