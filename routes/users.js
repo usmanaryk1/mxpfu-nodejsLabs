@@ -111,8 +111,15 @@ router.put("/:email", (req, res) => {
 
 // DELETE request: Delete a user by email ID
 router.delete("/:email", (req, res) => {
-  // Copy the code here
-  res.send("Yet to be implemented")//This line is to be replaced with actual return value
+  // Extract the email parameter from the request URL
+  const email = req.params.email;
+  // Filter the users array to exclude the user with the specified email
+  users = users.filter((user) => user.email != email);
+  // Send a success message as the response, indicating the user has been deleted
+  res.send(`User with the email ${email} deleted.`);
+
+  //for delete user from cmd write
+  // curl --request DELETE "localhost:5000/user/johnsmith@gamil.com"  
 });
 
 module.exports=router;
